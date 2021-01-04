@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Minecraft Server</title>
+    <script type="text/javascript" src="{{.Prefix}}/static/home.js"></script>
+    <link language="javascript" rel="stylesheet" href="{{.Prefix}}/static/home.css">
+</head>
+
+<body>
+    <div id="log">{{range .Log}}<div>{{.}}</div>{{end}}</div>
+    <div id="bottom">
+        <form id="form">
+            <input id="command" type="text" />
+            <input value="Send" type="submit" />
+        </form>
+        <div id="space"></div>
+        <input id="status"
+            class="{{if .Starting}}starting{{end}}{{if .Online}}online{{end}}{{if .Offline}}offline{{end}}" type="text"
+            value="{{.State}}" disabled />
+        <input id="start" type="button" value="Start">
+        <input id="restart" type="button" value="Restart">
+        <input id="stop" type="button" value="Stop">
+    </div>
+</body>
+
+</html>
